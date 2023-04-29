@@ -1,11 +1,21 @@
 const { Model, DataTypes } = require('sequelize');
-
+//might need to change the path to ../config/connection.js
 const sequelize = require('../Back2End2E-Commerce/config/connection.js');
 
 class Tag extends Model {}
 
 Tag.init(
   {
+    id:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+
+    tag_name: {
+      type: DataTypes.STRING
+    }
     // define columns
   },
   {
