@@ -3,12 +3,12 @@ const Product = require('./Product');
 const Category = require('./Category');
 const Tag = require('./Tag');
 const ProductTag = require('./ProductTag');
-const seedProductTags = require('../seeds/product-tag-seeds');
+// const seedProductTags = require('../seeds/product-tag-seeds');
 
 // Products belongsTo Category
-  Product.belongsTo(Category, {
-    foreignKey: 'category_id'
-  });
+  Product.belongsToMany(Tag, {through: ProductTag,
+  foreignKey: 'product_id'}
+  );
 
 // Categories have many Products
     //might need to add a 's' on product if it doesnt work!
@@ -17,15 +17,14 @@ const seedProductTags = require('../seeds/product-tag-seeds');
 
   });
 // Products belongToMany Tags (through ProductTag)
-  ProductTag.belongsToMany(Tag,{
+  ProductTag.belongsToMany(Tag,{through: ProductTag,
     foreignKey: 'product_id'
 
   });
 // Tags belongToMany Products (through ProductTag)
-  Tag.belongsToMany(Product,{
-    foreignKey: 'tag_id'
-
-  });
+  Tag.belongsToMany(Product,{through: ProductTag,
+  foreignKey: 'tag_id'});
+  
 
 
 module.exports = {

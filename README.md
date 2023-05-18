@@ -5,6 +5,9 @@
 
 This is an e-commerce backend application built with Node.js, Express.js, Sequelize ORM, and MySQL database. The application provides API endpoints to manage products, categories, and tags for an e-commerce website.
 
+## My Task
+
+Your task is to modify the provided starter code and build the back end for an e-commerce site. You will configure an Express.js API with Sequelize and a MySQL database. Additionally, you need to create a walkthrough video demonstrating the application's functionality and meeting the acceptance criteria.
 
 # Table of Contents
 - Installation
