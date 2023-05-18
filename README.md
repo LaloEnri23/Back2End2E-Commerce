@@ -17,7 +17,7 @@ Your task is to modify the provided starter code and build the back end for an e
 - License
 
 
-# Installation
+## Installation
 To install the application, follow the steps below:
 
 - Clone the repository to your local machine
@@ -33,7 +33,19 @@ To install the application, follow the steps below:
 
 
 # Usage
-To start the application, run npm start or node server.js in the terminal. The server will start listening on port 3001 by default. You can then use an API testing tool like Insomnia or Postman to test the API endpoints.
+1. To start the application, run mysql -u root -p.
+
+2. Then the terminal would ask for mysql password which you will provide.
+
+3. After that you would want to run source db/schema.sql to create the database
+
+4. THen you would want to input exit 
+
+5. To begin loading the database run npm run seed.
+
+6. Then run npm start
+
+7. Lastly use insomia for all the routes!
 
 # API Endpoints
 The following API endpoints are available:
