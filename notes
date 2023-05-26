@@ -1,0 +1,25 @@
+
+1. Set up the project and dependencies:
+- Create a new directory for your project
+- do `npm init`
+- Install `express`, `sequelize`, and `mysql2` using `npm install`
+- update `.env` file 
+- Create a `README.md` file and provide a link to your walkthrough video
+
+2. Set up the database and models:
+- Create a `schema.sql` file to define your database schema
+- work on the `models` folder to store your Sequelize models, including `Category`, `Product`, and `Tag`
+- Define the relationships between the models using Sequelize associations
+
+3. Set up the API routes and controllers:
+- work on the  `routes` folder to store your API routes, including GET, POST, PUT, and DELETE routes for each of the models
+- create a `controllers` folder to store the controller functions for each of the API routes
+- Use Sequelize queries to interact with the database and retrieve or modify data as needed
+
+4. Test your API using Insomnia:
+- Make sure database is running
+- use Insomnia and test each of the API routes, make sure that the data is displayed in a formatted JSON and that you can successfully create, update, and delete data in your database
+
+5. Create a walkthrough video:
+- Upload the video and include the link in your `README.md` file
+
