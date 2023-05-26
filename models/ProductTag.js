@@ -1,50 +1,42 @@
+// Import necessary dependencies and modules
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const Category = require('./Category');
 
+// Import the database connection configuration
+const sequelize = require('../config/connection');
+
+// Create a ProductTag class that extends Sequelize Model
 class Product extends Model {}
 
+// Initialize ProductTag model with its attributes and configuration options
 Product.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
-    product_name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    price: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-      validate: {
-        isDecimal: true
-      }
-    },
-    stock: {
+    product_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 10,
-      validate: {
-        isNumeric: true
-      }
+      references:{
+        model:'product', key:'id'
+      } ,
+      
     },
-    category_id: {
+   tag_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: Category,
-        key: 'id'
-      }
-    }
+      references:{
+      model:'tag', key:'id'
+      } ,
+    },
   },
+
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product',
+    modelName: 'product_tag',
   }
 );
 
